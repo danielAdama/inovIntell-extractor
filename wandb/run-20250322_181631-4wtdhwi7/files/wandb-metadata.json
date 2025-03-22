@@ -1,0 +1,47 @@
+{
+  "os": "macOS-14.5-arm64-arm-64bit",
+  "python": "CPython 3.11.9",
+  "startedAt": "2025-03-22T17:16:31.207284Z",
+  "args": [
+    "/Users/danny/Desktop/programming/NLP/inovIntell-extractor/Belaroussi 2023.pdf"
+  ],
+  "program": "/Users/danny/Desktop/programming/NLP/inovIntell-extractor/main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "https://github.com/danielAdama/inovIntell-extractor.git",
+    "commit": "5734ef66405166ef1091734a60fc22db975ce7de"
+  },
+  "email": "adamadaniel321@gmail.com",
+  "root": "/Users/danny/Desktop/programming/NLP/inovIntell-extractor",
+  "host": "Adamas-MBP-2",
+  "executable": "/Users/danny/Library/Caches/pypoetry/virtualenvs/inovintell-extractor-sA6hQeFN-py3.11/bin/python3",
+  "codePathLocal": "main.py",
+  "cpu_count": 8,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "245107195904",
+      "used": "237579526144"
+    },
+    "/System/Volumes/Data": {
+      "total": "245107195904",
+      "used": "237579526144"
+    }
+  },
+  "memory": {
+    "total": "8589934592"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 8
+  },
+  "apple": {
+    "name": "Apple M1",
+    "ecpuCores": 4,
+    "pcpuCores": 4,
+    "gpuCores": 8,
+    "memoryGb": 8,
+    "swapTotalBytes": "3221225472",
+    "ramTotalBytes": "8589934592"
+  }
+}

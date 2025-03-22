@@ -6,6 +6,10 @@ from utils.app_utils import AppUtil
 from document.processor import Preprocess
 from typing import Dict, Any, List
 
+from config.logger import Logger
+
+logger = Logger(__name__)
+
 class RWEExtractor:
     def __init__(self, wandb_project: str = "rwe-extraction-demo"):
         self.wandb_project = wandb_project
@@ -18,25 +22,36 @@ class RWEExtractor:
         path = Path(pdf_path)
         filename = path.name
         file_content = AppUtil.load_pdf(path.read_bytes())
-        output = self.processor.extract(file_content, "oncology")
+        demographics = self.processor.get_demographics(file_content, "demographics")
+        results = self.processor.get_result(file_content, demographics, "results")
+
+        logger.info(demographics)
+        logger.info("-------------------------------------------")
+        logger.info(results)
+        demographics_with_results = {**demographics, **results}
         extracted_data = {
+            **demographics_with_results,
             "study_name": f"Study from {filename}",
             "file_name": filename,
         }
-        extracted_data["metadata"]= {
-            "version": "1.0",
-            "description": "RWE Studies Annotations for Extraction Task",
-            "created_at": dt.now().strftime('%Y-%m-%dT%H:%M')
+
+        final_data = {
+            "metadata": {
+                "version": "1.0",
+                "description": "RWE Studies Annotations for Extraction Task",
+                "created_at": dt.now().strftime('%Y-%m-%dT%H:%M')
+            },
+            **extracted_data
         }
-        
-        extracted_data['raw_data'] = output
-        print(extracted_data)
+        logger.info(final_data)
+
         return extracted_data
 
     def process_and_log(self, pdf_path: str):
         """
         Process a PDF and log results to wandb
         """
+        data = self.extract_from_pdf(pdf_path)
         run = wandb.init(
             project=self.wandb_project,
             config={

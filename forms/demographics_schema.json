@@ -1,0 +1,38 @@
+{
+    "fields": {
+        "treatment_regimens": {
+            "type": "array",
+            "description": "A list of all treatment regimens mentioned in the study. Include every treatment or combination (e.g., monotherapy, combination therapy) exactly as referenced in the document."
+        },
+        "countries": {
+            "type": "array",
+            "description": "A list of all countries where the study was conducted. This should capture every geographical location related to patient enrollment or research sites mentioned in the document."
+        },
+        "populations": {
+            "type": "array",
+            "description": "A list of population groups with their specific clinical characteristics. Each entry should comprehensively capture details for a subgroup of patients.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "stage, histology": {
+                        "type": "string",
+                        "description": "Combined disease stage and histology information, including details like the progression stage (e.g., Stage III/IV) and histological classification (e.g., NSCLC, NSCC) as provided in the document."
+                    },
+                    "pdl1_status": {
+                        "type": "string",
+                        "description": "PD-L1 expression status (e.g., 'Mixed', 'PD-L1 negative', '≥50%'). Capture the value exactly as presented in the study."
+                    },
+                    "n": {
+                        "type": "number",
+                        "description": "The size of the population group (number of patients or subjects). Ensure the numeric value is extracted accurately"
+                    }
+                },
+                "required": [
+                    "stage, histology",
+                    "pdl1_status",
+                    "n"
+                ]
+            }
+        }
+    }
+}

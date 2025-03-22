@@ -1,7 +1,7 @@
 {
   "os": "macOS-14.5-arm64-arm-64bit",
   "python": "CPython 3.11.9",
-  "startedAt": "2025-03-22T16:45:12.330897Z",
+  "startedAt": "2025-03-22T17:12:02.491500Z",
   "args": [
     "/Users/danny/Desktop/programming/NLP/inovIntell-extractor/Banna 2022.pdf"
   ],
@@ -9,7 +9,7 @@
   "codePath": "main.py",
   "git": {
     "remote": "https://github.com/danielAdama/inovIntell-extractor.git",
-    "commit": "9e28e616ef876766609931b1488be7dac7904b4d"
+    "commit": "5734ef66405166ef1091734a60fc22db975ce7de"
   },
   "email": "adamadaniel321@gmail.com",
   "root": "/Users/danny/Desktop/programming/NLP/inovIntell-extractor",
@@ -21,11 +21,11 @@
   "disk": {
     "/": {
       "total": "245107195904",
-      "used": "237168271360"
+      "used": "237181411328"
     },
     "/System/Volumes/Data": {
       "total": "245107195904",
-      "used": "237168271360"
+      "used": "237181411328"
     }
   },
   "memory": {

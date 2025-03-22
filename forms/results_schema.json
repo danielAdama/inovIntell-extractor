@@ -1,0 +1,30 @@
+{
+    "fields": {
+        "results": {
+            "type": "object",
+            "description": "An object capturing treatment outcomes and statistical comparisons. The keys under results correspond to treatment regimens (as extracted previously) and a special key for group_difference.",
+            "properties": {
+                "median_os": {
+                    "type": "string",
+                    "description": "The median overall survival, usually expressed in months (e.g., '15.2 months' or 'not reached'). Ensure to capture the value exactly as reported."
+                },
+                "median_rw_pfs": {
+                    "type": "string",
+                    "description": "The median real-world progression-free survival if available. This reflects the duration where patients did not experience progression under real-world conditions."
+                },
+                "median_pfs": {
+                    "type": "string",
+                    "description": "The median progression-free survival, used if real-world data is not provided. Capture the value (numeric or text such as 'not reached') as it appears in the document."
+                },
+                "os_12_month": {
+                    "type": "string",
+                    "description": "The 12-month overall survival rate, typically presented as a percentage. Include any associated symbols or qualifiers exactly as mentioned."
+                },
+                "group_difference": {
+                    "type": "string",
+                    "description": "Any statistical comparisons (e.g., p-values) that indicate differences between treatment groups. Capture the information exactly as provided in the study."
+                }
+            }
+        }
+    }
+}

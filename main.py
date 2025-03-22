@@ -1,8 +1,6 @@
 import argparse
 from extractor.rwe_extractor import RWEExtractor
 
-file_path = '/Users/danny/Desktop/programming/NLP/inovIntell-extractor/Banna 2022.pdf'
-
 def main():
     parser = argparse.ArgumentParser(description='Extract RWE data from PDF')
     parser.add_argument('pdf_path', help='Path to the PDF file')
