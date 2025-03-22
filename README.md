@@ -42,16 +42,16 @@ inovIntell-extractor/
 
 ## Results
 ###Study from Banna 2022.pdf
-![Screenshot 2025-03-22 at 22 43 25 2](https://github.com/user-attachments/assets/2f7dcd57-05c2-4332-aba8-2ff632a3bb03)
-<img width="1680" alt="Screenshot 2025-03-22 at 22 43 25" src="https://github.com/user-attachments/assets/5ef37fa3-aaae-4572-ab4f-eba0a70aa999" />
+![Screenshot 2025-03-22 at 22 43 25 2](https://github.com/user-attachments/assets/3c2d78c5-ee67-487c-a72e-86ec03d6df1c)
+<img width="1676" alt="Screenshot 2![Screenshot 2025-03-22 at 22 46 26 2](https://github.com/user-attachments/assets/40cf0a42-ed15-4d41-9fd3-070613fe9186)
+025-03-22 at 22 43 25" src="https://github.com/user-attachments/assets/0df6e47f-18de-411d-8e84-88f283d2e51d" />
 
 ###Study from Belaroussi 2023.pdf
-![Screenshot 2025-03-22 at 22 46 26 2](https://github.com/user-attachments/assets/2020734c-9fd7-47b7-a66d-cfa8898d83f9)
-<img width="1680" alt="Screenshot 2025-03-22 at 22 46 26" src="https://github.com/user-attachments/assets/fa50cf06-ed82-49c0-b757-498b083c7fa7" />
+<img width="1674" alt="Screenshot 2025-03-22 at 22 46 26" src="https://github.com/user-attachments/assets/13eb89a6-a972-4da6-a862-67fdcefeb35d" />
 
 ###Study from Pons-Tostivint 2023.pdf
-![Screenshot 2025-03-22 at 22 47 30 2](https://github.com/user-attachments/assets/651bdf03-87a7-4e94-8ecd-4f4c9bb9de57)
-<img width="1680" alt="Screenshot 2025-03-22 at 22 47 30" src="https://github.com/user-attachments/assets/bb4e9a22-1cd4-4fec-b5dd-3637844e835f" />
+![Screenshot 2025-03-22 at 22 47 30 2](https://github.com/user-attachments/assets/5dc8e438-9475-4575-a6f0-0af4e22fd3ae)
+<img width="1680" alt="Screenshot 2025-03-22 at 22 47 30" src="https://github.com/user-attachments/assets/adcf6101-1139-4bb0-95ce-899ea5555e3b" />
 
 
 ## Setup
