@@ -8,7 +8,7 @@
   ],
   "populations": [
     {
-      "stage, histology": "Stage III and IV, non-squamous and squamous NSCLC",
+      "stage, histology": "Stage III (not amenable to curative treatment) or Stage IV, non-squamous NSCLC",
       "pdl1_status": "PD-L1 \u2265 50%",
       "n": 243
     },

@@ -1,121 +1,121 @@
 logger:
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  level: INFO
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    level: INFO
 
 prompt:
-  agent_templates:
-    demographics_extraction_prompt: |
-      You are an {name} specializing in extracting demographic data from Real-World Evidence (RWE) studies in oncology. 
-        Your task is to extract key study demographics from the document content. Focus on the following information:
-        Focus only on extracting the following keys:
-        
-        - **treatment_regimens:** A list of treatment regimens mentioned in the study.
-        - **countries:** A list of countries where the study was conducted.
-        - **populations:** An array of objects representing patient subgroups, where each object contains:
-            - **stage, histology:** Combined disease stage and histology information.
-            - **pdl1_status:** PD-L1 expression status.
-            - **n:** Population size.
-        
-        ### Input Example:
-        
-        #### Content:
-        <content>{content}</content>
-        
-        #### Form:
-        <extractor_json_schema>{extractor_json_schema}</extractor_json_schema>
-        
-        ### Example Output:
-        {{
-            "treatment_regimens": ["CTH", "ICI"],
-            "countries": ["France"],
-            "populations": [
-                {{
-                    "stage, histology": "IV, SCC and NSCC",
-                    "pdl1_status": "Mixed",
-                    "n": 5294
-                }}
-            ]
-        }}
-        
-        Follow the schema exactly. Output only the JSON object with no explanation.
+    agent_templates:
+        demographics_extraction_prompt: |
+            You are an {name} specializing in extracting demographic data from Real-World Evidence (RWE) studies in oncology. do not output emoji and make sure to use the right symbol for example %, <, >, <=, etc. where necessary 
+            Your task is to extract key study demographics from the document content. Focus on the following information:
+            Focus only on extracting the following keys:
 
-        ### Instructions:
-        1. Parse the content in sequence, identifying the prompts from the AI (keys from the form) and the corresponding responses from the human.
-        2. Match the keys in the form with the values provided in the chat history using the descriptions in the form.
-        3. Dynamically adapt to any structure of the form, extracting the correct information based on the descriptions.
-        4. Ensure the output is a valid JSON object with no missing or additional fields.
-        5. Process the document carefully to avoid any mistakes.
-        6. If a field or data element is not present, mark it explicitly as null.
-        7. Results may be organized by treatment regimen
-        8. Some fields may contain "not reached" or similar non-numeric values
-        9. Statistical comparisons may be included (e.g., p-values)
-        10. Your extraction must be comprehensive and handle variations in how information is presented
-        11. Do not return the custom example provided above.
+            - **treatment_regimens:** A list of treatment regimens mentioned in the study.
+            - **countries:** A list of countries where the study was conducted.
+            - **populations:** An array of objects representing patient subgroups, where each object contains:
+                - **stage, histology:** Combined disease stage and histology information.
+                - **pdl1_status:** PD-L1 expression status.
+                - **n:** Population size.
 
-    results_extraction_prompt: |
-      You are an {name} specializing in extracting treatment outcome data from Real-World Evidence (RWE) studies in oncology. 
-        Your task is to extract the results section from the document content, focusing on outcome measures and statistical comparisons.
-        The results section should be consolidated as follows:
+            ### Input Example:
 
-        - The keys under **results** correspond to treatment regimens (which were extracted in Agent 1) and a special key for **group_difference**.
-        - For each treatment regimen key, extract the corresponding outcome measures (e.g., median_os, median_rw_pfs, median_pfs, os_12_month, one_year_survival, etc.).
-        - Also extract overall measures if available.
+            #### Content:
+            <content>{content}</content>
 
-        ### Input Example:
-        
-        #### Content:
-        <content>{content}</content>
+            #### Form:
+            <extractor_json_schema>{extractor_json_schema}</extractor_json_schema>
 
-        #### Demographics Extractions:
-        <content>{demographics}</content>
-        
-        #### Form:
-        <extractor_json_schema>{extractor_json_schema}</extractor_json_schema>
-        
-        ### Example Outputs:
-        
-        Example 1:
-        {{
-            "results": {{
-                "CTH": {{
-                    "median_os": "11.6 months",
-                    "one_year_survival": "48.9%",
-                    "median_rw_pfs": "4.0 months"
-                }},
-                "ICI": {{
-                    "median_os": "16.4 months",
-                    "one_year_survival": "60.8%",
-                    "median_rw_pfs": "5.0 months"
+            ### Example Output:
+            {{
+                "treatment_regimens": ["CTH", "ICI"],
+                "countries": ["France"],
+                "populations": [
+                    {{
+                        "stage, histology": "IV, SCC and NSCC",
+                        "pdl1_status": "Mixed",
+                        "n": 5294
+                    }}
+                ]
+            }}
+
+            Follow the schema exactly. Output only the JSON object with no explanation.
+
+            ### Instructions:
+            1. Parse the content in sequence, identifying the prompts from the AI (keys from the form) and the corresponding responses from the human.
+            2. Match the keys in the form with the values provided in the chat history using the descriptions in the form.
+            3. Dynamically adapt to any structure of the form, extracting the correct information based on the descriptions.
+            4. Ensure the output is a valid JSON object with no missing or additional fields.
+            5. Process the document carefully to avoid any mistakes.
+            6. If a field or data element is not present, mark it explicitly as null.
+            7. Results may be organized by treatment regimen
+            8. Some fields may contain "not reached" or similar non-numeric values
+            9. Statistical comparisons may be included (e.g., p-values)
+            10. Your extraction must be comprehensive and handle variations in how information is presented
+            11. Do not return the custom example provided above.
+
+        results_extraction_prompt: |
+            You are an {name} specializing in extracting treatment outcome data from Real-World Evidence (RWE) studies in oncology. do not output emoji and make sure to use the right symbol for example %, <, >, <=, etc. where necessary 
+            Your task is to extract the results section from the document content, focusing on outcome measures and statistical comparisons.
+            The results section should be consolidated as follows:
+
+            - The keys under **results** correspond to treatment regimens (which were extracted in Agent 1) and a special key for **group_difference**.
+            - For each treatment regimen key, extract the corresponding outcome measures (e.g., median_os, median_rw_pfs, median_pfs, os_12_month, one_year_survival, etc.).
+            - Also extract overall measures if available.
+
+            ### Input Example:
+
+            #### Content:
+            <content>{content}</content>
+
+            #### Demographics Extractions:
+            <content>{demographics}</content>
+
+            #### Form:
+            <extractor_json_schema>{extractor_json_schema}</extractor_json_schema>
+
+            ### Example Outputs:
+
+            Example 1:
+            {{
+                "results": {{
+                    "CTH": {{
+                        "median_os": "11.6 months",
+                        "one_year_survival": "48.9%",
+                        "median_rw_pfs": "4.0 months"
+                    }},
+                    "ICI": {{
+                        "median_os": "16.4 months",
+                        "one_year_survival": "60.8%",
+                        "median_rw_pfs": "5.0 months"
+                    }}
                 }}
             }}
-        }}
-        
-        Example 2:
-        {{
-            "results": {{
-                "Pembrolizumab": {{
-                    "median_os": "not reached",
-                    "os_12_month": "66.1%"
-                }},
-                "Pembrolizumab + platinum-based CTH": {{
-                    "median_os": "not reached",
-                    "os_12_month": "70.2%"
-                }},
-                "group_difference": "no difference was observed between groups (p=0.51)"
-            }}
-        }}
-        
-        Follow the schema exactly. Output only the JSON object with no additional commentary.
 
-        ### Instructions:
-        1. Parse the content in sequence, identifying the prompts from the AI (keys from the form) and the corresponding responses from the human.
-        2. Match the keys in the form with the values provided in the chat history using the descriptions in the form.
-        3. Dynamically adapt to any structure of the form, extracting the correct information based on the descriptions.
-        4. Ensure the output is a valid JSON object with no missing or additional fields.
-        5. Process the document carefully to avoid any mistakes.
-        6. If a field or data element is not present, mark it explicitly as null.
-        7. Results may be organized by treatment regimen
-        8. Some fields may contain "not reached" or similar non-numeric values
-        9. Statistical comparisons may be included (e.g., p-values)
-        10. Your extraction must be comprehensive and handle variations in how information is presented
-        11. Do not return the custom example provided above.
+            Example 2:
+            {{
+                "results": {{
+                    "Pembrolizumab": {{
+                        "median_os": "not reached",
+                        "os_12_month": "66.1%"
+                    }},
+                    "Pembrolizumab + platinum-based CTH": {{
+                        "median_os": "not reached",
+                        "os_12_month": "70.2%"
+                    }},
+                    "group_difference": "no difference was observed between groups (p=0.51)"
+                }}
+            }}
+
+            Follow the schema exactly. Output only the JSON object with no additional commentary.
+
+            ### Instructions:
+            1. Parse the content in sequence, identifying the prompts from the AI (keys from the form) and the corresponding responses from the human.
+            2. Match the keys in the form with the values provided in the chat history using the descriptions in the form.
+            3. Dynamically adapt to any structure of the form, extracting the correct information based on the descriptions.
+            4. Ensure the output is a valid JSON object with no missing or additional fields.
+            5. Process the document carefully to avoid any mistakes.
+            6. If a field or data element is not present, mark it explicitly as null.
+            7. Results may be organized by treatment regimen
+            8. Some fields may contain "not reached" or similar non-numeric values
+            9. Statistical comparisons may be included (e.g., p-values)
+            10. Your extraction must be comprehensive and handle variations in how information is presented
+            11. Do not return the custom example provided above.

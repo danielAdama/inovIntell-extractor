@@ -8,8 +8,7 @@
     "Ipilimumab",
     "Nivolumab",
     "Pembrolizumab",
-    "Tremelimumab",
-    "chemotherapy-ICI combination"
+    "Tremelimumab"
   ],
   "countries": [
     "France"
@@ -36,7 +35,7 @@
       "n": 24
     },
     {
-      "stage, histology": "IV, unknown",
+      "stage, histology": "IV, overall",
       "pdl1_status": "unknown",
       "n": 3856
     }
