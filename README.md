@@ -41,9 +41,17 @@ inovIntell-extractor/
 ```
 
 ## Results
-Study from Banna 2022.pdf
+###Study from Banna 2022.pdf
 ![Screenshot 2025-03-22 at 22 43 25 2](https://github.com/user-attachments/assets/2f7dcd57-05c2-4332-aba8-2ff632a3bb03)
 <img width="1680" alt="Screenshot 2025-03-22 at 22 43 25" src="https://github.com/user-attachments/assets/5ef37fa3-aaae-4572-ab4f-eba0a70aa999" />
+
+###Study from Belaroussi 2023.pdf
+![Screenshot 2025-03-22 at 22 46 26 2](https://github.com/user-attachments/assets/2020734c-9fd7-47b7-a66d-cfa8898d83f9)
+<img width="1680" alt="Screenshot 2025-03-22 at 22 46 26" src="https://github.com/user-attachments/assets/fa50cf06-ed82-49c0-b757-498b083c7fa7" />
+
+###Study from Pons-Tostivint 2023.pdf
+![Screenshot 2025-03-22 at 22 47 30 2](https://github.com/user-attachments/assets/651bdf03-87a7-4e94-8ecd-4f4c9bb9de57)
+<img width="1680" alt="Screenshot 2025-03-22 at 22 47 30" src="https://github.com/user-attachments/assets/bb4e9a22-1cd4-4fec-b5dd-3637844e835f" />
 
 
 ## Setup
