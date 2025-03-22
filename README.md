@@ -40,6 +40,12 @@ inovIntell-extractor/
 └── README.md                 # Project documentation (this file).
 ```
 
+## Results
+Study from Banna 2022.pdf
+![Screenshot 2025-03-22 at 22 43 25 2](https://github.com/user-attachments/assets/2f7dcd57-05c2-4332-aba8-2ff632a3bb03)
+<img width="1680" alt="Screenshot 2025-03-22 at 22 43 25" src="https://github.com/user-attachments/assets/5ef37fa3-aaae-4572-ab4f-eba0a70aa999" />
+
+
 ## Setup
 
 ### Prerequisites
