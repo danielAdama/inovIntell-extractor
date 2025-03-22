@@ -1,0 +1,68 @@
+{
+    "fields": {
+        "treatment_regimens": {
+            "type": "array",
+            "description": "A list of all treatment regimens mentioned in the study. Include every treatment or combination (e.g., monotherapy, combination therapy) exactly as referenced in the document."
+        },
+        "countries": {
+            "type": "array",
+            "description": "A list of all countries where the study was conducted. This should capture every geographical location related to patient enrollment or research sites mentioned in the document."
+        },
+        "populations": {
+            "type": "array",
+            "description": "A list of population groups with their specific clinical characteristics. Each entry should comprehensively capture details for a subgroup of patients.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "stage_histology": {
+                        "type": "string",
+                        "description": "Combined disease stage and histology information, including details like the progression stage (e.g., Stage III/IV) and histological classification (e.g., NSCLC, NSCC) as provided in the document."
+                    },
+                    "pdl1_status": {
+                        "type": "string",
+                        "description": "The PD-L1 expression status, reported either as a percentage or threshold (e.g., '≥50%'). Capture the value exactly as presented in the study."
+                    },
+                    "n": {
+                        "type": "number",
+                        "description": "The size of the population group (number of patients or subjects). Ensure the numeric value is extracted accurately."
+                    }
+                },
+                "required": [
+                    "stage, histology",
+                    "pdl1_status",
+                    "n"
+                ]
+            }
+        },
+        "results": {
+            "type": "object",
+            "description": "An object capturing the treatment outcomes and statistical comparisons from the study. This should include both general and treatment-specific outcome measures.",
+            "properties": {
+                "median_os": {
+                    "type": "string",
+                    "description": "The median overall survival, usually expressed in months (e.g., '15.2 months' or 'not reached'). Ensure to capture the value exactly as reported."
+                },
+                "median_rw_pfs": {
+                    "type": "string",
+                    "description": "The median real-world progression-free survival if available. This reflects the duration where patients did not experience progression under real-world conditions."
+                },
+                "median_pfs": {
+                    "type": "string",
+                    "description": "The median progression-free survival, used if real-world data is not provided. Capture the value (numeric or text such as 'not reached') as it appears in the document."
+                },
+                "os_12_month": {
+                    "type": "string",
+                    "description": "The 12-month overall survival rate, typically presented as a percentage. Include any associated symbols or qualifiers exactly as mentioned."
+                },
+                "treatment_specific_results": {
+                    "type": "object",
+                    "description": "An object containing results specific to each treatment regimen. Each key should correspond to a treatment regimen, with its value being another object that captures the detailed outcomes for that regimen."
+                },
+                "group_difference": {
+                    "type": "string",
+                    "description": "Any statistical comparisons (e.g., p-values) that indicate differences between treatment groups. Capture the information exactly as provided in the study."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "os": "macOS-14.5-arm64-arm-64bit",
+  "python": "CPython 3.11.9",
+  "startedAt": "2025-03-22T17:08:16.530779Z",
+  "args": [
+    "/Users/danny/Desktop/programming/NLP/inovIntell-extractor/Banna 2022.pdf"
+  ],
+  "program": "/Users/danny/Desktop/programming/NLP/inovIntell-extractor/main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "https://github.com/danielAdama/inovIntell-extractor.git",
+    "commit": "9e28e616ef876766609931b1488be7dac7904b4d"
+  },
+  "email": "adamadaniel321@gmail.com",
+  "root": "/Users/danny/Desktop/programming/NLP/inovIntell-extractor",
+  "host": "Adamas-MBP-2",
+  "executable": "/Users/danny/Library/Caches/pypoetry/virtualenvs/inovintell-extractor-sA6hQeFN-py3.11/bin/python3",
+  "codePathLocal": "main.py"
+}
