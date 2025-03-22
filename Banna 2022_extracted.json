@@ -1,0 +1,51 @@
+{
+  "treatment_regimens": [
+    "pembrolizumab plus platinum-based chemotherapy"
+  ],
+  "countries": [
+    "United Kingdom",
+    "Switzerland"
+  ],
+  "populations": [
+    {
+      "stage, histology": "IIIB/IVA, Adenocarcinoma",
+      "pdl1_status": "Negative",
+      "n": 164
+    },
+    {
+      "stage, histology": "IVB, Adenocarcinoma",
+      "pdl1_status": "Negative",
+      "n": 113
+    },
+    {
+      "stage, histology": "IIIB/IVA, Squamous",
+      "pdl1_status": "Negative",
+      "n": 51
+    },
+    {
+      "stage, histology": "IVB, Squamous",
+      "pdl1_status": "Negative",
+      "n": 0
+    },
+    {
+      "stage, histology": "IIIB/IVA, Other",
+      "pdl1_status": "Negative",
+      "n": 11
+    },
+    {
+      "stage, histology": "IVB, Other",
+      "pdl1_status": "Negative",
+      "n": 0
+    }
+  ],
+  "results": {
+    "pembrolizumab plus platinum-based chemotherapy": {
+      "median_os": "12.7 months",
+      "median_rw_pfs": "8.0 months",
+      "os_12_month": "52.2%",
+      "group_difference": "Patients with high NLR (\u22654) had significantly shorter OS (median 11.8 vs 14.9 months, p=0.02) and PFS (median 6.6 vs 9.0 months, p=0.018) than those with low values."
+    }
+  },
+  "study_name": "Study from Banna 2022.pdf",
+  "file_name": "Banna 2022.pdf"
+}

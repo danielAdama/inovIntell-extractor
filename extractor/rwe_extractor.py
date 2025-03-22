@@ -25,9 +25,6 @@ class RWEExtractor:
         demographics = self.processor.get_demographics(file_content, "demographics")
         results = self.processor.get_result(file_content, demographics, "results")
 
-        logger.info(demographics)
-        logger.info("-------------------------------------------")
-        logger.info(results)
         demographics_with_results = {**demographics, **results}
         extracted_data = {
             **demographics_with_results,
@@ -43,7 +40,6 @@ class RWEExtractor:
             },
             **extracted_data
         }
-        logger.info(final_data)
 
         return extracted_data
 
@@ -51,7 +47,6 @@ class RWEExtractor:
         """
         Process a PDF and log results to wandb
         """
-        data = self.extract_from_pdf(pdf_path)
         run = wandb.init(
             project=self.wandb_project,
             config={
@@ -62,6 +57,7 @@ class RWEExtractor:
         
         try:
             data = self.extract_from_pdf(pdf_path)
+            logger.info(data)
             wandb.log({
                 "study_name": data["study_name"],
                 "extracted_data": data,

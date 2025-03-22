@@ -9,9 +9,9 @@ class Configuration:
         self.load_config()
 
     def load_config(self):
-        root_dir = pathlib.Path(__file__).parent.parent.parent
+        root_dir = pathlib.Path(__file__).parent
         # Construct the path to the configuration file
-        config_file = root_dir / 'env_config' / 'app_config.yml'
+        config_file = root_dir / 'app_config.yml'
         # Load the configuration from the YAML file
         with open(config_file, 'r') as f:
             self.config = yaml.safe_load(f)
